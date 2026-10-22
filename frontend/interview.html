@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Interview – HR_AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav>
+    <strong>HR_AI</strong>
+    <div class="nav-links">
+      <a href="dashboard.html" class="btn btn-ghost btn-sm">Exit Interview</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header class="interview-header">
+      <div class="round-badge" id="roundBadge">HR Round</div>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <div class="muted" id="progress" style="font-weight:500;">Question 1 of 5</div>
+        <div class="progress-bar" style="width:200px; margin:0;"><div id="progressBar"></div></div>
+      </div>
+    </header>
+
+    <article class="question-card">
+      <div class="question-meta">
+        <span class="question-type" id="qType">Open</span>
+      </div>
+      <h3 class="question-text" id="qText">Loading question…</h3>
+
+      <div class="answer-area" id="answerArea">
+        <textarea id="answerText" placeholder="Type your answer here…"></textarea>
+      </div>
+    </article>
+
+    <div class="interview-actions">
+      <button class="btn btn-secondary" id="prevBtn" type="button" style="display:none;">Previous</button>
+      <button class="btn btn-primary" id="nextBtn" type="button">Next</button>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/interview.js"></script>
+</body>
+</html>

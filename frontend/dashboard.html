@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Dashboard – HR_AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav>
+    <strong>HR_AI</strong>
+    <div class="nav-links">
+      <span id="who" class="muted" style="margin-right:16px;"></span>
+      <a href="#" onclick="API.logout()" class="btn btn-ghost btn-sm">Logout</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:28px; flex-wrap:wrap; gap:16px;">
+      <h2 style="margin:0; font-size:1.75rem; font-weight:700;">Dashboard</h2>
+    </div>
+
+    <div class="dashboard-stats">
+      <div class="stat-card">
+        <div class="stat-value" id="overall">–</div>
+        <div class="stat-label">Overall Readiness</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-hr">–</div>
+        <div class="stat-label">HR</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-technical">–</div>
+        <div class="stat-label">Technical</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-communication">–</div>
+        <div class="stat-label">Communication</div>
+      </div>
+    </div>
+
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+      <article class="card round-card" style="flex:1;">
+        <div class="round-icon" style="background:rgba(99,102,241,0.15); border-color:rgba(99,102,241,0.3);">🧑‍💼</div>
+        <h3>HR Round</h3>
+        <p class="round-score" id="s-hr">Not attempted</p>
+        <a class="btn btn-primary" href="interview.html?round=hr" style="width:100%;">Start HR Round</a>
+      </article>
+
+      <article class="card round-card" style="flex:1;">
+        <div class="round-icon" style="background:rgba(16,185,129,0.15); border-color:rgba(16,185,129,0.3);">💻</div>
+        <h3>Technical Round</h3>
+        <p class="round-score" id="s-technical">Not attempted</p>
+        <a class="btn btn-primary" href="interview.html?round=technical" style="width:100%;">Start Technical</a>
+      </article>
+
+      <article class="card round-card" style="flex:1;">
+        <div class="round-icon" style="background:rgba(245,158,11,0.15); border-color:rgba(245,158,11,0.3);">🎯</div>
+        <h3>Communication</h3>
+        <p class="round-score" id="s-communication">Not attempted</p>
+        <a class="btn btn-primary" href="interview.html?round=communication" style="width:100%;">Start Communication</a>
+      </article>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Progress Chart</h3>
+      </div>
+      <div class="chart-container">
+        <canvas id="chart"></canvas>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Past Attempts</h3>
+      </div>
+      <div id="history" class="history-list">
+        <div class="empty-state">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+          <h3>No attempts yet</h3>
+          <p>Complete your first interview round to see history here</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

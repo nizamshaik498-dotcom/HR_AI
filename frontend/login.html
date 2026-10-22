@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Login – HR_AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav><strong>HR_AI</strong></nav>
+
+  <div class="container auth-container">
+    <div class="card auth-card">
+      <div class="auth-header">
+        <h2 id="authTitle">Welcome back</h2>
+        <p id="authSubtitle">Sign in to continue your interview practice</p>
+      </div>
+
+      <form id="authForm" class="auth-form">
+        <div class="input-group" id="nameGroup" style="display:none">
+          <label for="name">Full Name</label>
+          <input id="name" type="text" placeholder="Enter your name" autocomplete="name">
+          <p class="error-msg" id="nameError"></p>
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="you@example.com" required autocomplete="email">
+          <p class="error-msg" id="emailError"></p>
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="••••••••" required autocomplete="current-password">
+          <p class="error-msg" id="passwordError"></p>
+        </div>
+
+        <button class="btn btn-primary" type="submit" id="submitBtn">Continue</button>
+      </form>
+
+      <p id="msg" class="bad" style="text-align:center; margin-top:16px; display:none;"></p>
+
+      <div class="divider"></div>
+
+      <p class="auth-footer" style="margin:0;">
+        <span id="togglePrompt">New here? </span>
+        <a href="#" id="toggle" style="color:var(--brand); font-weight:600;">Create an account</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
